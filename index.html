@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery2</title>
+	</head>
+	<body>
+		<!--<p>
+			<ol>
+				<li>Hello</li>
+			</ol>
+		</p>
+		<p>How are you?</p>-->
+		
+		
+		
+		<ul>
+			<li>第1项</li>
+			<li>第2项</li>
+			<li><i>55555555555</i>第3项</li>
+			<li>第4项</li>
+			<li>第5项</li>
+			<li>第6项</li>
+			<li>第7项</li>
+		</ul>
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		
+		<ol>
+			<li>A</li>
+			<li>B</li>
+			<li>C<i></i></li>
+		</ol>
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+//			1.jQuery对象是一个容器,内部可用有很过个标签元素
+//			2.在jQuery对象上调用某些方法时会对jQuery对象中的每一个标签元素都起作用
+//			3.jQuery对象的某些方法会返回jQuery对象自身,所以可用链试调用
+//			链试调用的原理:对象的方法能返回对象本身
+
+//          使用筛选器过滤
+//		    2n是偶数的意思
+//	       $('li').filter(':nth-child(2n)').css('color','blue')
+//          $("p").filter(function(index) {
+//          	console.log(index)
+//          	console.log(this)
+
+
+//          	this为当前索引(是p),下面的意思是在this里面找ol标签, ==0是返回没有的,就是没有ol标签的
+//				return $("ol", this).length == 0;
+//}).css('color','blue');
+
+//$('ul>li').filter(document.querySelectorAll('li:nth-child(2n)')).css('color','red')
+
+//odd奇数
+//console.log($('ul>li:odd','ol>li:odd').css('color','red'))
+
+//排除掉一部分not()从匹配元素中删除集合元素
+//$('ul>li:odd,ol>li:odd').not('ul>li').css('color','red')
+
+//slice开始选取子集的位置。第一个元素是0.如果是负数，则可以从集合的尾部开始选起。
+//结束选取自己的位置，如果不指定，则就是本身的结尾。
+//第一个参数为开始位置(包含本身)
+//第二个参数为结束自己(不包含本身)
+//$('li').slice(3,5).css('color','red')
+
+//包含特定子元素
+//$('li').has('i').css('color','blue')
+
+//合并两个jQuery对象生成一个jQuery对象
+//$('ul>li:odd').add('ol>li:even').css('color','blue')
+
+$('ul>li:nth-child(4)').prev().nextAll(':odd').addBack().css('color','blue')
+
+
+		</script>
+
+	</body>
+</html>

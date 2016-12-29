@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery对象-回到一个jquery对象</title>
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.red-text{
+				color: red;
+			}
+			.bold-text{
+				font-size: 2rem;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>第1项</li>
+			<li>第2项</li>
+			<li class="red-text">第3项</li>
+			<li>第4项</li>
+			<li>css</li>
+			<li>第5项</li>
+			<li>第6项</li>
+			<li>第7项</li>
+		</ul>
+		<p></p>
+		<script type="text/javascript">
+//			var chain = $('li:nth-child(4)').prev().prev().nextAll().last()
+//			chain.css('color','red')
+//			chain.end().css('color','blue')
+//			chain.end().end().css('color','blue')
+//			chain.end().end().end().css('color','blue')
+//			chain.end().end().end().end().css('color','blue')
+			
+			//将元素转换为数组
+			//把每个元素通过函数传递到当前匹配集合中,生成包含返回值的新数组
+//			var ts = $('li').map(function(){
+//				console.log($(this).text())
+//				return $(this).text()
+//				//this表示当前索引位置的标签元素
+//			})
+//			console.dir(ts)
+
+//			map回调函数有两个参数,第一个参数为单前元素的索引,第二个参数为当前元素
+//         var ts = $('li').map(
+//         	(i,ele)=>{
+//         	return $(ele).text()
+
+//          (i,ele)=>$(ele).text()
+            //如果=>右侧只有一个return语句,可以省略{return}
+            
+//          (ele)=>{console.log(ele)}
+          //如果左侧只有一个参数则可以省略圆括号
+          //如果=>左侧没有参数则必须写()=>{}
+          //使用箭头函数时要注意this的指向
+          //如果没有明确function作用域包围this,则指向全局作用域window
+//         )
+           
+//         console.log(ts)
+//将类似数组转换成数组的方法
+//拼接数组元素为字符串的方法
+//join()用于把数组中所有元素放入一个字符串
+//Array.from(ts)可以把类似数组的对象转换成数组
+//console.dir(Array.from(ts).join(', '))
+
+//判断jQuery对象中的标签元素是否符合某个条件
+//alert($('li:even').is('.red-text'))
+////内容中是否包含指定字符串
+//function hasCss(i,ele){
+//	return $(ele).text().indexOf('css') >-1
+//}
+//alert($('li:eq(4)').is(hasCss))
+
+//toArray()将jQuery对象(类似数组的对象)转换为数组
+//console.log($('li').toArray())
+//console.log($('li').toArray().reverse())
+
+console.log($('li').toArray().reverse().map(ele=>ele.innerText).join(','))
+		</script>
+		
+	</body>
+</html>
